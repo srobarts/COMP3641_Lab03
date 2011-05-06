@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>Lab03</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+ 
+  	<display-name>Lab03</display-name>
+  	<description>Lab to demonstrate database connections and cookies</description>
+  
+	<context-param>
+    	<param-name>outputPageTitle</param-name>
+    	<param-value>COMP 3641 Lab02 Output Page</param-value>
+  	</context-param>
+   
+  	<welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+  	</welcome-file-list>
+  	
+  	<servlet>
+    	<servlet-name>Lab03</servlet-name>
+    	<servlet-class>a00222500_lab03.Lab03</servlet-class>
+    	<init-param>
+      		<param-name>message</param-name>
+      		<param-value>Thank you for using my temperature converter</param-value>
+    	</init-param>
+  	</servlet>
+  
+  	<servlet-mapping>
+  		<servlet-name>Lab03</servlet-name>
+  		<url-pattern>/query_database</url-pattern>
+  	</servlet-mapping>
+
+
 </web-app>
