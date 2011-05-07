@@ -1,8 +1,6 @@
 package a00222500_lab03;
 
 import java.io.IOException;
-import java.sql.DriverManager;
-import java.util.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +19,21 @@ public class lab03_servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setHeader("Cache-Control", "no-cache");
-
+		//fetch init parameters
+		String url = getInitParameter("url"); 
+		String driver = getInitParameter("driver"); 
+		String dbname = getInitParameter("dbname"); 
+		String user = getInitParameter("user"); 
+		String password = getInitParameter("password"); 
+		
+		DatabaseObject db = new DatabaseObject();
+		
+		db.setURL(url);
+		db.setDriver(driver);
+		db.setDBName(dbname);
+		db.setUser(user);
+		db.setPassword(password);
+		 
 	}
 	
 	/**
@@ -31,16 +43,4 @@ public class lab03_servlet extends HttpServlet {
 		// TODO Auto-generated method stub
 	} 
 	
-	protected void getDatabaseParameters() {
-			String url = getInitParameter("url"); 
-			String driver = getInitParameter("driver"); 
-			String dbname = getInitParameter("dbname"); 
-			String user = getInitParameter("user"); 
-			String password = getInitParameter("password"); 
-			
-			Properties props = new Properties();
-			
-		}
-	}
-
 }
