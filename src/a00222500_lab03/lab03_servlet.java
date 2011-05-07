@@ -33,6 +33,7 @@ public class lab03_servlet extends HttpServlet {
 		db.setDBName(dbname);
 		db.setUser(user);
 		db.setPassword(password);
+		db.cleanup();
 		 
 	}
 	
