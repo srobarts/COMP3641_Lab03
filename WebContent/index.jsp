@@ -13,30 +13,35 @@
 </body>
 	<div id="wrapper">
 		<div id="header">
-			<h1>COMP 3641 Temperature Converter</h1>
+			<h1>COMP 3641 Lab 03</h1>
+			<h2>The Beatles Collection Database</h2>
 			<hr />
+		</div>
+		
+		<div id="applet_image">
+			<img src="Let_it_be.jpg" />
+			<APPLET CODE="PlayBeatlesTune" WIDTH="200" HEIGHT="300">
+  				<B>Error! You must use a Java-enabled browser.</B>
+			</APPLET>
 		</div>
 		
 		<div id="content">
 			<div id="stylized" class="myform">
 				<form id="form" name="form" method="post" action="convert">
-					<h1>Temperature Converter</h1>
-					<p>Convert any temperature between Celsius and Fahrenheit</p>
+					<p>Input a correct SQL statement below to query the database.<br />
+					Query results will be show on the following page after submission.</p>
 					
-					<label>Temperature:
-					<span class="small">Input temperature:</span>
+					<h3>Sample Query:</h3>
+					<p>SELECT * FROM beatles<br />
+					SELECT * FROM beatles WHERE title LIKE '%Help%'</p>
+					
+					
+					<label>Query:
+					<span class="small">Please input your query:</span><br />
 					</label>
-					<input SIZE=5 MAXLENGTH=25 name="inputTemp" id="inputTemp" />
+					<input SIZE=50 name="query" id="query" />
 					
-					<label>Select Conversion:
-					<span class="small">Convert temperature to:</span>
-					</label>
-					<div id="radioblock">
-						<input type="radio" name="convertTo" value="C" />Celsius <br />
-						<input type="radio" name="convertTo" value="F" />Fahrenheit
-					</div>
-					
-					<button type="submit">Convert</button>
+					<button type="submit">Submit</button>
 					<div class="spacer"></div>
 				</form>
 			</div>

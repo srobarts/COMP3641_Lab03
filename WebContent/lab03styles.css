@@ -50,6 +50,30 @@ h1 {
 	padding-top:30px;
 }
 
+/* -------- Applet ---------------*/
+
+#applet_image {
+    height: 400px;
+    margin-top: 100px;
+    position: relative;
+    text-align: center;
+    width: 1000px;
+}
+
+#applet button{
+	clear:both;
+	margin-left:150px;
+	width:125px;
+	height:31px;
+	background:#666666 url(img/button.png) no-repeat;
+	text-align:center;
+	line-height:31px;
+	color:#FFFFFF;
+	font-size:11px;
+	font-weight:bold;
+	margin:5px;
+}
+
 /* -------- Footer --------------- */
 
 #footer {
@@ -68,6 +92,8 @@ h1 {
 	margin:0 auto;
 	width:400px;
 	padding:14px;
+	position:relative;
+	top:20px;
 }
 
 #radioblock {
@@ -101,7 +127,7 @@ h1 {
 #stylized label{
 	display:block;
 	font-weight:bold;
-	text-align:right;
+	text-align:left;
 	width:140px;
 	float:left;
 }
@@ -109,10 +135,10 @@ h1 {
 #stylized .small{
 	color:#666666;
 	display:block;
-	font-size:11px;
+	font-size:12px;
 	font-weight:normal;
-	text-align:right;
-	width:140px;
+	text-align:left;
+	width:240px;
 }
 
 #stylized input{
@@ -120,7 +146,7 @@ h1 {
 	font-size:12px;
 	padding:4px 2px;
 	border:solid 1px #aacfe4;
-	width:200px;
+	width:370px;
 	margin:2px 0 20px 10px;
 }
 
