@@ -1,6 +1,7 @@
 package a00222500_lab03;
 
 import java.io.IOException;
+import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,14 +27,15 @@ public class lab03_servlet extends HttpServlet {
 		String user = getInitParameter("user"); 
 		String password = getInitParameter("password"); 
 		
-		DatabaseObject db = new DatabaseObject();
+		DatabaseObject db = new DatabaseObject(url, driver, dbname, user, password);
 		
-		db.setURL(url);
-		db.setDriver(driver);
-		db.setDBName(dbname);
-		db.setUser(user);
-		db.setPassword(password);
-		db.cleanup();
+		String query = "SELECT * FROM beatles";
+		
+		Vector result = db.getRecords(query);
+		
+		
+		//close connections
+		//db.cleanup();
 		 
 	}
 	
@@ -41,7 +43,7 @@ public class lab03_servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		doPost(request, response);
 	} 
 	
 }

@@ -2,55 +2,55 @@ package a00222500_lab03;
 
 import java.util.*;
 import java.sql.*;
-import java.sql.DriverManager;
 
 public class DatabaseObject {
 
-	private Connection conn = null;
-	private Statement stmt = null;
+	protected Connection conn = null;
+	protected Statement stmt = null;
 	private ResultSet queryResults = null;
-	private String url = "";
 	private String driver = "";
+	private String dbname = "";
+	private String url = "";
 	private String user = "";
 	private String password = "";
 	
-	public void setURL(String url){
+	private void setURL(String url){
 		this.url = url;
 	}
 	
-	public void setDriver(String driver){
+	private void setDriver(String driver){
 		this.driver = driver;
 	}
 	
-	public void setDBName(String dbname){
+	private void setDBName(String dbname){
+		this.dbname = dbname;
 	}
 	
-	public void setUser(String user){
+	private void setUser(String user){
 		this.user = user;
 	}
 	
-	public void setPassword(String password){
+	private void setPassword(String password){
 		this.password = password;
 	}
 	
-	public DatabaseObject() {
-		try {
-			Class.forName(driver);
-			conn = DriverManager.getConnection(url, user, password);
-		} catch(SQLException ex){
-			ex.printStackTrace();
-		}catch (ClassNotFoundException ex){
-			ex.printStackTrace();
-		} 
+	public DatabaseObject(String url, String driver, String dbname, String user, String password) {
+		this.setURL(url);
+		this.setDriver(driver);
+		this.setDBName(dbname);
+		this.setUser(user);
+		this.setPassword(password);
 	}
 	
 	
 	@SuppressWarnings("rawtypes")
 	public Vector getRecords(String selectQuery){
 		Vector<Vector<String>> rows = new Vector<Vector<String>>();
-		
+			
 		try{
-			stmt = conn.createStatement();
+			Class.forName(this.driver);
+			Connection connection = DriverManager.getConnection(this.url, this.user, this.password);
+			Statement stmt = connection.createStatement();
 			queryResults = stmt.executeQuery(selectQuery);
 			
 			ResultSetMetaData meta = queryResults.getMetaData();
@@ -63,6 +63,8 @@ public class DatabaseObject {
 				} 
 				rows.addElement(oneRow);
 			}
+		} catch (ClassNotFoundException ex) {
+			ex.printStackTrace();
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
