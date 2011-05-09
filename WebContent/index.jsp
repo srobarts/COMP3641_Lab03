@@ -27,7 +27,7 @@
 		
 		<div id="content">
 			<div id="stylized" class="myform">
-				<form id="form" name="form" method="post" action="convert">
+				<form id="form" name="form" method="post" action="query_database">
 					<p>Input a correct SQL statement below to query the database.<br />
 					Query results will be show on the following page after submission.</p>
 					

@@ -70,12 +70,12 @@ public class DatabaseObject {
 	}
 	
 	public void cleanup() {
-		try {
-			stmt.close();
-			conn.close();
+		/*try {
+			//stmt.close();
+			//conn.close();
 		} catch (SQLException ex) {
 			ex.printStackTrace();
-		}
+		}*/
 	}
 	
 	

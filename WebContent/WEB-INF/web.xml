@@ -15,7 +15,7 @@
   	
   	<servlet>
     	<servlet-name>Lab03</servlet-name>
-    	<servlet-class>a00222500_lab03.Lab03</servlet-class>
+    	<servlet-class>a00222500_lab03.lab03_servlet</servlet-class>
     	<init-param>
     		<param-name>url</param-name>
     		<param-value>jdbc:sqlserver://Beangrinder.bcit.ca</param-value>
