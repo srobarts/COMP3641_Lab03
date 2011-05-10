@@ -13,7 +13,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/Users/srobarts/Downloads/homework_examples-1/MS-SQLServer 2005/sqljdbc.jar"/>
 	<classpathentry kind="lib" path="/usr/local/apache-tomcat-7.0.12/lib/tomcat-util.jar"/>
+	<classpathentry kind="lib" path="/usr/local/apache-tomcat-7.0.12/lib/sqljdbc.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

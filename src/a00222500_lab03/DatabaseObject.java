@@ -1,15 +1,10 @@
 package a00222500_lab03;
 
-import java.util.*;
 import java.sql.*;
 
 public class DatabaseObject {
 
-	protected Connection conn = null;
-	protected Statement stmt = null;
-	private ResultSet queryResults = null;
 	private String driver = "";
-	private String dbname = "";
 	private String url = "";
 	private String user = "";
 	private String password = "";
@@ -22,10 +17,6 @@ public class DatabaseObject {
 		this.driver = driver;
 	}
 	
-	private void setDBName(String dbname){
-		this.dbname = dbname;
-	}
-	
 	private void setUser(String user){
 		this.user = user;
 	}
@@ -34,16 +25,11 @@ public class DatabaseObject {
 		this.password = password;
 	}
 	
-	public DatabaseObject(String url, String driver, String dbname, String user, String password) {
-		this.setURL(url);
-		this.setDriver(driver);
-		this.setDBName(dbname);
-		this.setUser(user);
-		this.setPassword(password);
+	public DatabaseObject() {
 	}
 	
 	
-	@SuppressWarnings("rawtypes")
+	/*@SuppressWarnings("rawtypes")
 	public Vector getRecords(String selectQuery){
 		Vector<Vector<String>> rows = new Vector<Vector<String>>();
 			
@@ -69,16 +55,16 @@ public class DatabaseObject {
 			ex.printStackTrace();
 		}
 		return rows;	
-	}
+	}*/
 	
-	public void cleanup() {
-		/*try {
-			//stmt.close();
-			//conn.close();
+	/*public void cleanup() {
+		try {
+			stmt.close();
+			conn.close();
 		} catch (SQLException ex) {
 			ex.printStackTrace();
-		}*/
-	}
+		}
+	}*/
 	
 	
 }
